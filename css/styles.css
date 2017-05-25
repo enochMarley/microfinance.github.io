@@ -1,0 +1,68 @@
+
+.navbar{
+    background: #337ab7;
+    border: 1px solid transparent;
+    transition: all 0.45s ease-in-out;
+}
+.navbar a{
+    color: #fff !important;
+    transition: all 0.3s ease-in-out;
+}
+.navbar a:hover{
+    color: orange !important;
+}
+.selected a{
+    color: orange !important;
+}
+.search-input{
+    margin-top: 10px;
+    height: 25px;
+    border: 1px solid #c0c0c0;
+    background:#f7f7f7;
+    text-align: center;
+    border-radius: 3px;
+
+}
+.card-div{
+    padding: 10px;
+    border: 1px solid #c0c0c0;
+    box-shadow: 0px 6px 6px #c0c0c0, 0px 7px 7px #c0c0c0;
+    border-radius: 3px;
+    width: 100%;
+    background: #fff;
+}
+.admin-login-form input{
+    width: 90%;
+    margin-left: 5%;
+    height: 50px;
+    border: 1px solid #c0c0c0;
+    background:inherit;
+    text-align: center;
+    border-radius: 3px;
+}
+.admin-login-form button{
+    width: 90%;
+    margin-left: 5%;
+}
+.client-form input[type="text"],.client-form input[type="date"],.client-form input[type="number"],.client-form input[type="email"]{
+    width: 100%;
+    height: 40px;
+    border: 1px solid #c0c0c0;
+    background:inherit;
+    text-align: center;
+    border-radius: 3px;
+}
+.deposit-form input{
+    width: 100%;
+    height: 40px;
+    border: 1px solid #c0c0c0;
+    background:inherit;
+    text-align: center;
+    border-radius: 3px;
+}
+.deposit-form select{
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    border-radius: 3px;
+}
