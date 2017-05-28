@@ -7,20 +7,21 @@ CREATE TABLE microfinance.admin (
   PRIMARY KEY (adminId)
 );
 
-CREATE TABLE microfinance.clients (
-  Id int(11) NOT NULL AUTO_INCREMENT,
-  fullName text NOT NULL,
-  birthDate text NOT NULL,
-  nationality text NOT NULL,
-  emailAddress text NOT NULL,
-  gender text NOT NULL,
-  phoneNumber text NOT NULL,
-  resAddress text NOT NULL,
-  nextOfKin text NOT NULL,
-  signUpdate timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  balance double NOT NULL DEFAULT '0',
-  PRIMARY KEY (Id)
-);
+CREATE TABLE clients (
+ Id int(11) NOT NULL AUTO_INCREMENT,
+ fullName text NOT NULL,
+ birthDate text NOT NULL,
+ nationality text NOT NULL,
+ emailAddress text NOT NULL,
+ gender text NOT NULL,
+ phoneNumber text NOT NULL,
+ resAddress text NOT NULL,
+ nextOfKin text NOT NULL,
+ signUpdate timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+ balance double NOT NULL DEFAULT '0',
+ debit double NOT NULL DEFAULT '0',
+ PRIMARY KEY (Id)
+) 
 
 
 CREATE TABLE microfinance.transactions (

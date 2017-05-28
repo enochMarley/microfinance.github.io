@@ -41,11 +41,9 @@
 		        <li>
 		        	<a href="clients.php"><span class="glyphicon glyphicon-user"></span> Clients</a>
 		        </li>
-		        <li  class="selected">
-		        	<a href="deposit.php"><span class="glyphicon glyphicon-cloud-upload"></span> Deposit</a>
-		        </li>
+		        <li><a href="deposit.php"><span class="glyphicon glyphicon-cloud-upload"></span> Deposit</a></li>
 		        <li><a href="withdraw.php"><span class="glyphicon glyphicon-cloud-download"></span>Withdraw</a></li>
-		        <li class="dropdown">
+		        <li class="dropdown selected">
 			        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-credit-card"></span> Loans
 			        <span class="caret"></span></a>
 			        <ul class="dropdown-menu">
@@ -65,23 +63,27 @@
 			<div class="row">
 				<div class="col-md-2"></div>
 				<div class="col-md-8 well">
-				<h3 class="text-center">Deposit Form</h3>
-					<form action="includes/api/depositFund.php" method="post" class="deposit-form">
+				<h3 class="text-center">Loan Grant Form</h3>
+					<form action="includes/api/grantLoan.php" method="post" class="deposit-form">
 						<div class="row">
-							<div class="col-md-6">
+							<div class="col-md-4">
 								<label>Select Client</label><br>
 								<select name="clientName" required>
 									<?php getClientNames(); ?>
 								</select>
 							</div>
-							<div class="col-md-6">
-								<label>Deposit Amount (GH&cent;)</label><br>
+							<div class="col-md-4">
+								<label>Loan Amount (GH&cent;)</label><br>
 								<input type="number" name="amount" step="any" min="1" required>
+							</div>
+							<div class="col-md-4">
+								<label>Interest Percentage (e.g 40,12)</label><br>
+								<input type="number" name="interest" step="any" min="1" required>
 							</div>
 						</div><br><br>
 						<div class="row">
 							<div class="col-md-6">
-								<button type="submit" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-cloud-upload"></span> Deposit</button>
+								<button type="submit" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-credit-card"></span> Proceed</button>
 								<a href="clients.php">
 									<button type="button" class="btn btn-warning btn-lg"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
 								</a>

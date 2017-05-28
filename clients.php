@@ -13,7 +13,6 @@
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
 	    <title>Microfinance</title>
 	    <link rel="stylesheet" href="css/bootstrap.min.css">
-	    <link rel="stylesheet" href="css/jquery-ui-theme.css">
 	    <link rel="stylesheet" href="css/styles.css">
 		<style>
 			body{
@@ -42,6 +41,14 @@
 		        </li>
 		        <li><a href="deposit.php"><span class="glyphicon glyphicon-cloud-upload"></span> Deposit</a></li>
 		        <li><a href="withdraw.php"><span class="glyphicon glyphicon-cloud-download"></span>Withdraw</a></li>
+		        <li class="dropdown">
+			        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-credit-card"></span> Loans
+			        <span class="caret"></span></a>
+			        <ul class="dropdown-menu">
+			          <li><a href="loan.php">Grant Loan</a></li>
+			          <li><a href="pLoan.php">Pay Loan</a></li>
+			        </ul>
+			     </li>
 		      </ul>
 		      <ul class="nav navbar-nav navbar-right">
 		        <li><a href="#myModal" data-toggle="modal"><span class="glyphicon glyphicon-plus"></span> Add Client</a></li>

@@ -4,6 +4,9 @@
     border: 1px solid transparent;
     transition: all 0.45s ease-in-out;
 }
+.navbar .dropdown-menu{
+     background: #337ab7 !important;
+}
 .navbar a{
     color: #fff !important;
     transition: all 0.3s ease-in-out;

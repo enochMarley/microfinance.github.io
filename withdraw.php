@@ -15,7 +15,6 @@
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
 	    <title>Microfinance</title>
 	    <link rel="stylesheet" href="css/bootstrap.min.css">
-	    <link rel="stylesheet" href="css/jquery-ui-theme.css">
 	    <link rel="stylesheet" href="css/styles.css">
 		<style>
 			body{
@@ -46,9 +45,17 @@
 		        	<a href="deposit.php"><span class="glyphicon glyphicon-cloud-upload"></span> Deposit</a>
 		        </li>
 		        <li class="selected"><a href="withdraw.php"><span class="glyphicon glyphicon-cloud-download"></span>Withdraw</a></li>
+		        <li class="dropdown">
+			        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-credit-card"></span> Loans
+			        <span class="caret"></span></a>
+			        <ul class="dropdown-menu">
+			          <li><a href="loan.php">Grant Loan</a></li>
+			          <li><a href="pLoan.php">Pay Loan</a></li>
+			        </ul>
+			     </li>
 		      </ul>
 		      <ul class="nav navbar-nav navbar-right">
-		        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+		        <li><a href="includes/api/logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
 		      </ul>
 		    </div>
 		  </div>
@@ -74,7 +81,7 @@
 						</div><br><br>
 						<div class="row">
 							<div class="col-md-6">
-								<button type="submit" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-cloud-upload"></span> Withdraw</button>
+								<button type="submit" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-cloud-download"></span> Withdraw</button>
 								<a href="clients.php">
 									<button type="button" class="btn btn-warning btn-lg"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
 								</a>

@@ -1,4 +1,10 @@
-<?php  
+<?php 
+
+	session_start();
+	if (!isset($_SESSION['username'])) {
+		echo "<script>window.location.href = 'index.php';</script>";
+	}
+
 	include "includes/api/dbConfig.php";
 	$cId = intval($_GET['id']);
 	
@@ -11,13 +17,6 @@
 
 ?>
 
-<?php  
-	session_start();
-	if (!isset($_SESSION['username'])) {
-		echo "<script>window.location.href = 'index.php';</script>";
-	}
-?>
-
 <!doctype html>
 <html>
 	<head>
@@ -26,7 +25,6 @@
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
 	    <title>Microfinance</title>
 	    <link rel="stylesheet" href="css/bootstrap.min.css">
-	    <link rel="stylesheet" href="css/jquery-ui-theme.css">
 	    <link rel="stylesheet" href="css/styles.css">
 		<style>
 			body{
