@@ -3,6 +3,8 @@
 	if (!isset($_SESSION['username'])) {
 		echo "<script>window.location.href = 'index.php';</script>";
 	}
+
+	include "includes/api/functions.php";
 ?>
 
 <!doctype html>
@@ -36,12 +38,12 @@
 		        <li>
 		        	<a href="#"><span class="glyphicon glyphicon-dashboard"></span> <?php echo $_SESSION['username']; ?></a>
 		        </li>
-		        <li class="selected">
+		        <li>
 		        	<a href="clients.php"><span class="glyphicon glyphicon-user"></span> Clients</a>
 		        </li>
 		        <li><a href="deposit.php"><span class="glyphicon glyphicon-cloud-upload"></span> Deposit</a></li>
 		        <li><a href="withdraw.php"><span class="glyphicon glyphicon-cloud-download"></span>Withdraw</a></li>
-		        <li class="dropdown">
+		        <li class="dropdown selected">
 			        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-credit-card"></span> Loans
 			        <span class="caret"></span></a>
 			        <ul class="dropdown-menu">
@@ -54,8 +56,7 @@
 			     </li>
 		      </ul>
 		      <ul class="nav navbar-nav navbar-right">
-		        <li><a href="#myModal" data-toggle="modal"><span class="glyphicon glyphicon-plus"></span> Add Client</a></li>
-		        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+		        <li><a href="includes/api/logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
 		      </ul>
 		    </div>
 		  </div>
@@ -63,21 +64,10 @@
 		
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-md-12 clientsDiv">
-					
-				</div>
-			</div>
-		</div>
-
-		<div id="myModal" class="modal fade" aria-hidden="true">
-		    <div class="modal-dialog">
-		        <div class="modal-content">
-		            <div class="modal-header">
-		                <button class="close" data-dismiss="modal">&times;</button>
-		                <h4 class="modal-title">Please Enter The Details Of Client To Add</h4>
-		            </div>
-		            <div class="modal-body"> 
-		                <form method="post" action="includes/api/addClient.php" enctype="multipart/form-data" class="client-form">
+				<div class="col-md-3"></div>
+				<div class="col-md-6 well">
+					<h3 class="text-center">Loan Grant Form (Non-Clients)</h3>
+					<form method="post" action="includes/api/grantNLoan.php" enctype="multipart/form-data" class="client-form">
 		                	<input type="hidden" name="maxsize" value="10000000" /><br><br>
 	                        <label>Client's passport size photo (photo format should be .jpg)</label>
 	                        <div>
@@ -105,41 +95,28 @@
 			                 <label>Residential Address</label><br>
 			                 <input type="text"  name="residentialAddress" class="client-res-address" required>
 			                 <br><br>
-			                 <label>Next Of Kin</label><br>
-			                 <input type="text" name="nextOfKin" class="client-next-of-kin" required>
+			                 <label>Amount</label><br>
+			                 <input type="number" name="amount" step="any" required>
 			                 <br><br>
-		            </div>
-		            <div class="modal-footer">
-		            	<button type="submit" class="btn btn-primary" id="add">Register Client</button>
-		            	<button type="reset" class="btn btn-warning">Clear Form</button>
-		                <button type="button" data-dismiss="modal" class="btn btn-danger">Cancel Registration</button>
-		                </form>
-		            </div>
-		        </div>
-		    </div>
+			                 <label>Interest</label><br>
+			                 <input type="number" name="interest" max="100" min="1" step="any" required>
+			                 <br><br>
+			                 <label>Guarantor</label><br>
+			                 <input type="text" name="guarantor" class="client-next-of-kin" required>
+			                 <br><br>
+			                 <button type="submit" class="btn btn-primary" id="add">Grant Loan</button>
+		            		<button type="reset" class="btn btn-warning">Clear Form</button>
+			        </form>
+				</div>
+				<div class="col-md-3"></div>
+			</div>
 		</div>
 
 		<script src="js/jquery2.2.4.min.js"></script>
 	    <script src="js/jquery-ui.min.js"></script>
 	    <script src="js/bootstrap.min.js"></script>
 	    <script>
-	    	function getClients() {
-				$.ajax({
-					method: 'GET',
-					url: "includes/api/getClients.php",
-					success: function(data) {
-						
-						$(".clientsDiv").html(data);
-					},
-					error: function(error) {
-						console.log(error);
-					}
-				});
-			}
-
-			getClients();
-
-			function readURL(input) {
+	    	function readURL(input) {
 
                 if (input.files && input.files[0]) {
                     var reader = new FileReader();

@@ -66,13 +66,13 @@
 			<div class="row">
 				<div class="col-md-2"></div>
 				<div class="col-md-8 well">
-				<h3 class="text-center">Loan Payment Form</h3>
-					<form action="includes/api/payLoan.php" method="post" class="deposit-form">
+				<h3 class="text-center">Loan Payment Form (Non-Client)</h3>
+					<form action="includes/api/npayLoan.php" method="post" class="deposit-form">
 						<div class="row">
 							<div class="col-md-6">
-								<label>Select Client</label><br>
+								<label>Select Name</label><br>
 								<select name="clientName" required>
-									<?php getLoanClientNames(); ?>
+									<?php getLoanNames(); ?>
 								</select>
 							</div>
 							<div class="col-md-6">

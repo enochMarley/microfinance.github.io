@@ -47,8 +47,11 @@
 			        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-credit-card"></span> Loans
 			        <span class="caret"></span></a>
 			        <ul class="dropdown-menu">
-			          <li><a href="loan.php">Grant Loan</a></li>
-			          <li><a href="pLoan.php">Pay Loan</a></li>
+			          <li><a href="loan.php">Grant Loan (Clients)</a></li>
+			          <li><a href="pLoan.php">Pay Loan (Clients)</a></li>
+			          <li><a href="nLoan.php">Grant Loan (Non-Clients)</a></li>
+			          <li><a href="npLoan.php">Pay Loan (Non-Clients)</a></li>
+			          <li><a href="loanArrears.php">Arrears (Non-Clients)</a></li>
 			        </ul>
 			     </li>
 		      </ul>

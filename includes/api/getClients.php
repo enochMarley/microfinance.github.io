@@ -8,6 +8,7 @@
 		echo "<table class='table table-hover table-striped'>
 			    <thead>
 			      <tr>
+			      	<th>Image</th>
 			        <th>Full Name</th>
 			        <th>Gender</th>
 			        <th>Phone Number</th>
@@ -31,8 +32,10 @@
 			$cPhoneNumber = $row['phoneNumber'];
 			$cResAddress = $row['resAddress'];
 			$cNextOfKin = $row['balance'];
+			$image = $row['profileImg'];
 
 			echo "<tr>
+					<td><img src='includes/uploads/$image' id='profileImg2'/></td>
 			        <td>".substr($cFullName,0,15)."</td>
 			        <td>".$cGender."</td>
 			        <td>".$cPhoneNumber."</td>

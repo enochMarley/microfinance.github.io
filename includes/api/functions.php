@@ -49,5 +49,19 @@
         }
     }
 
+    function getLoanNames(){
+        include "dbConfig.php";
+        $query = "SELECT Id, fullName FROM loans WHERE debit > 0;";
+        $result = $database->query($query);
+        if (mysqli_num_rows($result) > 0) {
+           while ($row = mysqli_fetch_assoc($result)) {
+                $fullName = $row['fullName'];
+                $id = $row['Id'];
+               echo "<option value='$id'>$fullName</option>";
+           }
+        }else{
+            echo "<option disabled>No Clients In Database</option>";
+        }
+    }
 
 ?>
