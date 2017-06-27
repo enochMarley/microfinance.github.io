@@ -61,7 +61,7 @@
 					<script>
 						$(".resMsg").html("Login Successful").css("color","green");
 						setInterval(function(){
-							window.location.href = "clients.php";
+							window.location.href = "options.php";
 						},1000);
 					</script>
 <?php	

@@ -10,7 +10,7 @@
 			      <tr>
 			      	<th>Image</th>
 			        <th>Full Name</th>
-			        <th>Gender</th>
+			        <th>Account No.</th>
 			        <th>Phone Number</th>
 			        <th>Email Address</th>
 			        <th>Date of Birth</th>
@@ -25,7 +25,7 @@
 
 			$cId = $row['Id'];
 			$cFullName = $row['fullName'];
-			$cGender = $row['gender'];
+			$cGender = $row['accountNumber'];
 			$cBirthDay = $row['birthDate'];
 			$cNationality = $row['nationality'];
 			$cEmailAddress = $row['emailAddress'];

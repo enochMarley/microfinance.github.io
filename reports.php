@@ -3,8 +3,6 @@
 	if (!isset($_SESSION['username'])) {
 		echo "<script>window.location.href = 'index.php';</script>";
 	}
-
-	include "includes/api/functions.php";
 ?>
 
 <!doctype html>
@@ -41,10 +39,8 @@
 		        <li>
 		        	<a href="clients.php"><span class="glyphicon glyphicon-user"></span> Clients</a>
 		        </li>
-		        <li>
-		        	<a href="deposit.php"><span class="glyphicon glyphicon-cloud-upload"></span> Deposit</a>
-		        </li>
-		        <li class="selected"><a href="withdraw.php"><span class="glyphicon glyphicon-cloud-download"></span>Withdraw</a></li>
+		        <li><a href="deposit.php"><span class="glyphicon glyphicon-cloud-upload"></span> Deposit</a></li>
+		        <li><a href="withdraw.php"><span class="glyphicon glyphicon-cloud-download"></span>Withdraw</a></li>
 		        <li class="dropdown">
 			        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-credit-card"></span> Loans
 			        <span class="caret"></span></a>
@@ -56,10 +52,10 @@
 			          <li><a href="loanArrears.php">Arrears (Non-Clients)</a></li>
 			        </ul>
 			     </li>
-			     <li><a href="reports.php"><span class="glyphicon glyphicon-file"></span>Reports</a></li>
+			     <li class="selected"><a href="reports.php"><span class="glyphicon glyphicon-file"></span>Reports</a></li>
 		      </ul>
 		      <ul class="nav navbar-nav navbar-right">
-		        <li><a href="includes/api/logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+		        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
 		      </ul>
 		    </div>
 		  </div>
@@ -67,40 +63,34 @@
 		
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-md-2"></div>
-				<div class="col-md-8 well">
-				<h3 class="text-center">Withdrawal Form</h3>
-					<form action="includes/api/withdrawFund.php" method="post" class="deposit-form">
-						<div class="row">
-							<div class="col-md-6">
-								<label>Select Client</label><br>
-								<select name="clientName" required>
-									<?php getClientNames(); ?>
-								</select>
-							</div>
-							<div class="col-md-6">
-								<label>Withdrawal Amount (GH&cent;)</label><br>
-								<input type="number" name="amount" step="any" min="1" required>
-							</div>
-						</div><br><br>
-						<div class="row">
-							<div class="col-md-6">
-								<button type="submit" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-cloud-download"></span> Withdraw</button>
-								<a href="clients.php">
-									<button type="button" class="btn btn-warning btn-lg"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
-								</a>
-							</div>
-						</div>
-						
-					</form>
+				<div class="col-md-12 clientsDiv">
+					
 				</div>
-				<div class="col-md-2"></div>
 			</div>
 		</div>
+
+	
 
 		<script src="js/jquery2.2.4.min.js"></script>
 	    <script src="js/jquery-ui.min.js"></script>
 	    <script src="js/bootstrap.min.js"></script>
+	    <script>
+	    	function getReports() {
+				$.ajax({
+					method: 'GET',
+					url: "includes/api/getReports.php",
+					success: function(data) {
+						
+						$(".clientsDiv").html(data);
+					},
+					error: function(error) {
+						console.log(error);
+					}
+				});
+			}
+
+			getReports();
+	    </script>
 	</body>
 </html>
 

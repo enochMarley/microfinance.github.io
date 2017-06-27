@@ -34,7 +34,7 @@
 		    <div class="collapse navbar-collapse" id="myNavbar">
 		      <ul class="nav navbar-nav">
 		        <li>
-		        	<a href="#"><span class="glyphicon glyphicon-dashboard"></span> <?php echo $_SESSION['username']; ?></a>
+		        	<a href="options.php"><span class="glyphicon glyphicon-dashboard"></span> <?php echo $_SESSION['username']; ?></a>
 		        </li>
 		        <li class="selected">
 		        	<a href="clients.php"><span class="glyphicon glyphicon-user"></span> Clients</a>
@@ -52,6 +52,7 @@
 			          <li><a href="loanArrears.php">Arrears (Non-Clients)</a></li>
 			        </ul>
 			     </li>
+			     <li><a href="reports.php"><span class="glyphicon glyphicon-file"></span>Reports</a></li>
 		      </ul>
 		      <ul class="nav navbar-nav navbar-right">
 		        <li><a href="#myModal" data-toggle="modal"><span class="glyphicon glyphicon-plus"></span> Add Client</a></li>

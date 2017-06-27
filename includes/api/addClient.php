@@ -8,6 +8,7 @@
 	$cPhoneNumber = trim($_POST['phoneNumber']);
 	$cResAddress = trim($_POST['residentialAddress']);
 	$cNextOfKin = trim($_POST['nextOfKin']);
+	$cAccNum = generateAccountNumber();
 
 	if (isset($_FILES["profileImage"]["name"])) {
 		$cImage = $_FILES["profileImage"]["name"];
@@ -18,7 +19,7 @@
 
 	$checkQuery = "SELECT * FROM clients WHERE fullName = '$cFullName' AND birthDate = '$cBirthDay' AND nationality = '$cNationality' AND emailAddress = '$cEmailAddress' AND gender = '$cGender' AND phoneNumber = '$cPhoneNumber' AND resAddress = '$cResAddress' AND nextOfKin = '$cNextOfKin';";
 
-	$insertQuery = "INSERT INTO clients(fullName,birthDate,nationality,emailAddress,gender,phoneNumber,resAddress,nextOfKin,profileImg) VALUES ('$cFullName','$cBirthDay','$cNationality','$cEmailAddress','$cGender','$cPhoneNumber','$cResAddress','$cNextOfKin','$cImage');";
+	$insertQuery = "INSERT INTO clients(fullName,birthDate,nationality,emailAddress,gender,phoneNumber,resAddress,nextOfKin,accountNumber,profileImg) VALUES ('$cFullName','$cBirthDay','$cNationality','$cEmailAddress','$cGender','$cPhoneNumber','$cResAddress','$cNextOfKin','$cAccNum','$cImage');";
 
 	$checkResult = $database->query($checkQuery);
 
@@ -40,6 +41,10 @@
 			}
 		}
 		
+	}
+
+	function generateAccountNumber(){
+		return substr((string)(md5(rand(1,10000))),0,10);
 	}
 
  ?>
