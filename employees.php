@@ -36,7 +36,7 @@
 		        <li>
 		        	<a href="options.php"><span class="glyphicon glyphicon-dashboard"></span> <?php echo $_SESSION['username']; ?></a>
 		        </li>
-		        <li class="selected">
+		        <li>
 		        	<a href="clients.php"><span class="glyphicon glyphicon-user"></span> Clients</a>
 		        </li>
 		        <li><a href="deposit.php"><span class="glyphicon glyphicon-cloud-upload"></span> Deposit</a></li>
@@ -52,11 +52,11 @@
 			          <li><a href="loanArrears.php">Arrears (Non-Clients)</a></li>
 			        </ul>
 			     </li>
-			     <li><a href="employees_init.php"><span class="glyphicon glyphicon-list"></span> Employees</a></li>
+			     <li class="selected"><a href="employees_init.php"><span class="glyphicon glyphicon-list"></span> Employees</a></li>
 			     <li><a href="reports.php"><span class="glyphicon glyphicon-file"></span>Reports</a></li>
 		      </ul>
 		      <ul class="nav navbar-nav navbar-right">
-		        <li><a href="#myModal" data-toggle="modal"><span class="glyphicon glyphicon-plus"></span> Add Client</a></li>
+		        <li><a href="#myModal" data-toggle="modal"><span class="glyphicon glyphicon-plus"></span> Add Employee</a></li>
 		        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
 		      </ul>
 		    </div>
@@ -65,7 +65,7 @@
 		
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-md-12 clientsDiv">
+				<div class="col-md-12 employeesDiv">
 					
 				</div>
 			</div>
@@ -76,12 +76,12 @@
 		        <div class="modal-content">
 		            <div class="modal-header">
 		                <button class="close" data-dismiss="modal">&times;</button>
-		                <h4 class="modal-title">Please Enter The Details Of Client To Add</h4>
+		                <h4 class="modal-title">Please Enter The Details Of Employee To Add</h4>
 		            </div>
 		            <div class="modal-body"> 
-		                <form method="post" action="includes/api/addClient.php" enctype="multipart/form-data" class="client-form">
+		                <form method="post" action="includes/api/addEmployee.php" enctype="multipart/form-data" class="client-form">
 		                	<input type="hidden" name="maxsize" value="10000000" /><br><br>
-	                        <label>Client's passport size photo (photo format should be .jpg)</label>
+	                        <label>Employee's passport size photo (photo format should be .jpg)</label>
 	                        <div>
 	                            <div><img src="includes/images/profile.jpeg" id="profileImg"></div><br>
 	                            <input accept="image/jpeg" type="file"  name="profileImage" required="true" id="uploadFile"><br>
@@ -93,26 +93,26 @@
 			                 <input type="radio" name="gender" value="male" class="client-gender"> Male
 			                 <input type="radio" name="gender" value="female" class="client-gender"> Female <br><br>
 			                 <label>Date Of Birth (dd/mm/yy)</label><br>
-			                 <input type="date" name="dateOfBirth" class="client-dob" required>
+			                 <input type="date" name="dateOfBirth" required>
 			                 <br><br>
 			                 <label>Nationality</label><br>
-			                 <input type="text" name="nationality" class="client-nationality" required>
+			                 <input type="text" name="nationality" required>
 			                 <br><br>
 			                 <label>Email Address</label><br>
-			                 <input type="email"  name="emailAddress" class="client-email" required>
+			                 <input type="email"  name="emailAddress" required>
 			                 <br><br>
 			                 <label>Phone Number</label><br>
-			                 <input type="number" name="phoneNumber" class="client-phone-number" required>
+			                 <input type="number" name="phoneNumber" required>
 			                 <br><br>
 			                 <label>Residential Address</label><br>
-			                 <input type="text"  name="residentialAddress" class="client-res-address" required>
+			                 <input type="text"  name="residentialAddress" required>
 			                 <br><br>
-			                 <label>Next Of Kin</label><br>
-			                 <input type="text" name="nextOfKin" class="client-next-of-kin" required>
+			                 <label>Net Salary</label><br>
+			                 <input type="number" min="1" name="salary"  required>
 			                 <br><br>
 		            </div>
 		            <div class="modal-footer">
-		            	<button type="submit" class="btn btn-primary" id="add">Register Client</button>
+		            	<button type="submit" class="btn btn-primary" id="add">Register Employee</button>
 		            	<button type="reset" class="btn btn-warning">Clear Form</button>
 		                <button type="button" data-dismiss="modal" class="btn btn-danger">Cancel Registration</button>
 		                </form>
@@ -128,10 +128,10 @@
 	    	function getClients() {
 				$.ajax({
 					method: 'GET',
-					url: "includes/api/getClients.php",
+					url: "includes/api/getEmployees.php",
 					success: function(data) {
 						
-						$(".clientsDiv").html(data);
+						$(".employeesDiv").html(data);
 					},
 					error: function(error) {
 						console.log(error);

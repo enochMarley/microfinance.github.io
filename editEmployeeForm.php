@@ -1,20 +1,29 @@
-<?php 
+<?php  
+	include "includes/api/dbConfig.php";
+	$cId = intval($_GET['id']);
+	
+	$query = "SELECT * FROM employees WHERE Id = $cId;";
+	$result = $database->query($query);
+	if (mysqli_num_rows($result) > 0) {
+		$row = mysqli_fetch_assoc($result);
+		$cId = $row['Id'];
+		$cFullName = $row['fullName'];
+		$cGender = $row['gender'];
+		$cBirthDay = $row['birthDate'];
+		$cNationality = $row['nationality'];
+		$cEmailAddress = $row['emailAddress'];
+		$cPhoneNumber = $row['phoneNumber'];
+		$cResAddress = $row['resAddress'];
+		$salary = $row['salary'];
+	}
 
+?>
+
+<?php  
 	session_start();
 	if (!isset($_SESSION['username'])) {
 		echo "<script>window.location.href = 'index.php';</script>";
 	}
-
-	include "includes/api/dbConfig.php";
-	$cId = intval($_GET['id']);
-	
-	$query = "SELECT fullName FROM clients WHERE Id = $cId;";
-	$result = $database->query($query);
-	if (mysqli_num_rows($result) > 0) {
-		$row = mysqli_fetch_assoc($result);
-		$cFullName = $row['fullName'];
-	}
-
 ?>
 
 <!doctype html>
@@ -60,12 +69,31 @@
 			<div class="row">
 				<div class="col-md-3"></div>
 				<div class="col-md-6 well">
-					<h3 class="text-center">Delete Client</h3>
-					<form method="post" action="includes/api/deleteClient.php" class="client-form">
+					<h3 class="text-center">Edit Employee</h3>
+					<form method="post" action="includes/api/editEmployee.php" class="client-form">
 						<input type="hidden" name="id" value="<?php echo $cId;?>">
-						<h2 class="text-center">Are You Sure You Want To Delete <?php echo $cFullName; ?> From Your Clients List?</h2>
-						<button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-check"></span>Yes</button>
-						<a href="clients.php"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span> No</button></a>
+		           		<label>Full Name</label><br>
+			            <input type="text" name="fullName" value="<?php echo $cFullName; ?>" required>
+			            <br><br>
+			            <label>Date Of Birth (dd/mm/yy)</label><br>
+			            <input type="date" name="dateOfBirth" value="<?php echo $cBirthDay ?>"  required>
+			            <br><br>
+			            <label>Nationality</label><br>
+			            <input type="text" name="nationality" value="<?php echo $cNationality ?>" required>
+			            <br><br>
+			            <label>Email Address</label><br>
+			            <input type="email"  name="emailAddress" value="<?php echo $cEmailAddress ?>" required>
+			            <br><br>
+			            <label>Phone Number</label><br>
+			            <input type="number" name="phoneNumber" value="<?php echo $cPhoneNumber ?>" required>
+			            <br><br>
+			            <label>Residential Address</label><br>
+			            <input type="text"  name="residentialAddress" value="<?php echo $cResAddress ?>" required>
+			            <br><br>
+			            <label>Net Salary</label><br>
+			            <input type="number" min="1" name="salary" value="<?php echo $salary ?>" required>
+			            <br><br>
+			            <button class="btn btn-primary btn-lg">Update</button>
 			        </form>
 				</div>
 				<div class="col-md-3"></div>

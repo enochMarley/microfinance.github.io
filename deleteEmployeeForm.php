@@ -8,7 +8,7 @@
 	include "includes/api/dbConfig.php";
 	$cId = intval($_GET['id']);
 	
-	$query = "SELECT fullName FROM clients WHERE Id = $cId;";
+	$query = "SELECT fullName FROM employees WHERE Id = $cId;";
 	$result = $database->query($query);
 	if (mysqli_num_rows($result) > 0) {
 		$row = mysqli_fetch_assoc($result);
@@ -60,12 +60,12 @@
 			<div class="row">
 				<div class="col-md-3"></div>
 				<div class="col-md-6 well">
-					<h3 class="text-center">Delete Client</h3>
-					<form method="post" action="includes/api/deleteClient.php" class="client-form">
+					<h3 class="text-center">Delete Employee</h3>
+					<form method="post" action="includes/api/deleteEmployee.php" class="client-form">
 						<input type="hidden" name="id" value="<?php echo $cId;?>">
-						<h2 class="text-center">Are You Sure You Want To Delete <?php echo $cFullName; ?> From Your Clients List?</h2>
+						<h2 class="text-center">Are You Sure You Want To Delete <?php echo $cFullName; ?> From Your Employees List?</h2>
 						<button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-check"></span>Yes</button>
-						<a href="clients.php"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span> No</button></a>
+						<a href="employees.php"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span> No</button></a>
 			        </form>
 				</div>
 				<div class="col-md-3"></div>

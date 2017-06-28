@@ -24,37 +24,37 @@
 		<div class="container">
 				<h2 class="text-center">Select An Activity</h2>
 				<a href="clients.php">
-					<div class="col-md-3 opt-div" style="background: red;color:white;">
-						<h1 class="text-center" style="line-height: 200px;">Clients</h1>
+					<div class="col-md-4 opt-div" style="background: red;color:white;">
+						<h1 class="text-center" style="line-height: 300px;">Clients</h1>
 					</div>
 				</a>
 				<a href="withdraw.php">
-					<div class="col-md-3 opt-div" style="background: green;color:white;">
-						<h1 class="text-center" style="line-height: 200px;">Withdrawal</h1>
+					<div class="col-md-4 opt-div" style="background: green;color:white;">
+						<h1 class="text-center" style="line-height: 300px;">Withdrawal</h1>
 					</div>
 				</a>
 				<a href="deposit.php">
-					<div class="col-md-3 opt-div" style="background: cyan;color:white;">
-						<h1 class="text-center" style="line-height: 200px;">Deposit</h1>
+					<div class="col-md-4 opt-div" style="background: cyan;color:white;">
+						<h1 class="text-center" style="line-height: 300px;">Deposit</h1>
 					</div>
 				</a>
 				<a href="loan.php">
-					<div class="col-md-3 opt-div" style="background: pink;color:white;">
-						<h1 class="text-center" style="line-height: 200px;">Loans</h1>
+					<div class="col-md-4 opt-div" style="background: pink;color:white;">
+						<h1 class="text-center" style="line-height: 300px;">Loans</h1>
 					</div>
 				</a>
 			
 				<a href="reports.php">
-					<div class="col-md-3 opt-div" style="background: grey;color:white;">
-						<h1 class="text-center" style="line-height: 200px;">Reports</h1>
+					<div class="col-md-4 opt-div" style="background: grey;color:white;">
+						<h1 class="text-center" style="line-height: 300px;">Reports</h1>
+					</div>
+				</a>
+				<a href="employees_init.php">
+					<div class="col-md-4 opt-div" style="background: magenta;color:white;">
+						<h1 class="text-center" style="line-height: 300px;">Employees</h1>
 					</div>
 				</a>
 				<!--<a href="">
-					<div class="col-md-3">
-						<h1 class="text-center">Withdrawal</h1>
-					</div>
-				</a>
-				<a href="">
 					<div class="col-md-3">
 						<h1 class="text-center">Deposit</h1>
 					</div>

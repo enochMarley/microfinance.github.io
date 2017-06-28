@@ -52,7 +52,8 @@
 			          <li><a href="loanArrears.php">Arrears (Non-Clients)</a></li>
 			        </ul>
 			     </li>
-			     <li class="selected"><a href="reports.php"><span class="glyphicon glyphicon-file"></span>Reports</a></li>
+			     <li><a href="employees_init.php"><span class="glyphicon glyphicon-list"></span> Employees</a></li>
+			     <li class="selected"><a href="reports.php"><span class="glyphicon glyphicon-file"></span> Reports</a></li>
 		      </ul>
 		      <ul class="nav navbar-nav navbar-right">
 		        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>

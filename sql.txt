@@ -8,3 +8,6 @@ CREATE TABLE microfinance.loans ( Id int(11) NOT NULL AUTO_INCREMENT, fullName t
 
 
 CREATE TABLE microfinance.transactions ( id int(11) NOT NULL AUTO_INCREMENT, clientId int(11) NOT NULL, transaction text NOT NULL, transactionDate timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, PRIMARY KEY (id) );
+
+CREATE TABLE employees (Id int(11) NOT NULL AUTO_INCREMENT,fullName text NOT NULL,birthDate text NOT NULL,nationality text NOT NULL,emailAddress text NOT NULL,gender text NOT NULL,phoneNumber text NOT NULL,resAddress text NOT NULL,salary double NOT NULL,signUpdate timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,profileImg text NOT NULL,PRIMARY KEY (Id)
+);
