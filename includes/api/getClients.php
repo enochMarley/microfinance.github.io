@@ -25,25 +25,25 @@
 
 			$cId = $row['Id'];
 			$cFullName = $row['fullName'];
-			$cGender = $row['accountNumber'];
+			$cAccountNum = $row['accountNumber'];
 			$cBirthDay = $row['birthDate'];
 			$cNationality = $row['nationality'];
 			$cEmailAddress = $row['emailAddress'];
 			$cPhoneNumber = $row['phoneNumber'];
 			$cResAddress = $row['resAddress'];
-			$cNextOfKin = $row['balance'];
+			$balance = $row['balance'];
 			$image = $row['profileImg'];
 
 			echo "<tr>
 					<td><img src='includes/uploads/$image' id='profileImg2'/></td>
 			        <td>".substr($cFullName,0,15)."</td>
-			        <td>".$cGender."</td>
+			        <td>".substr($cAccountNum,0,10)."</td>
 			        <td>".$cPhoneNumber."</td>
 			        <td>".substr($cEmailAddress,0,15)."</td>
 			        <td>".substr($cBirthDay,0,15)."</td>
 			        <td>".$cNationality."</td>
 			        <td>".substr($cResAddress,0,15)."</td>
-			        <td>".substr($cNextOfKin,0,15)."</td>
+			        <td>".substr($balance,0,10)."</td>
 			        <td>
 			        	<a href='transactions.php?id=$cId'><button class='btn btn-info'><span class='glyphicon glyphicon-credit-card'></span> Transactions</button></a>
 			        	<a href='editClientForm.php?id=$cId'><button class='btn btn-primary'><span class='glyphicon glyphicon-edit'></span> Edit</button></a> 

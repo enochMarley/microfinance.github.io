@@ -15,6 +15,7 @@
 		$cPhoneNumber = $row['phoneNumber'];
 		$cResAddress = $row['resAddress'];
 		$cNextOfKin = $row['nextOfKin'];
+		$cAccountNumber =  $row['accountNumber'];
 	}
 
 ?>
@@ -32,9 +33,10 @@
 		<meta charset="utf-8">
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
-	    <title>Microfinance</title>
+	    <title>Nhyra Company Ltd</title>
 	    <link rel="stylesheet" href="css/bootstrap.min.css">
 	    <link rel="stylesheet" href="css/styles.css">
+	    <link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
 		<style>
 			body{
 				background-color: #f7f7f7;
@@ -50,7 +52,7 @@
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 		      </button>
-		      <a class="navbar-brand" href="#">Company</a>
+		      <a class="navbar-brand" href="#">Nhyra Company Ltd</a>
 		    </div>
 		    <div class="collapse navbar-collapse" id="myNavbar">
 		      <ul class="nav navbar-nav">
@@ -76,7 +78,7 @@
 			            <input type="text" name="fullName" value="<?php echo $cFullName; ?>" required>
 			            <br><br>
 			            <label>Date Of Birth (dd/mm/yy)</label><br>
-			            <input type="date" name="dateOfBirth" value="<?php echo $cBirthDay ?>"  required>
+			            <input type="date" name="dateOfBirth" value="<?php echo $cBirthDay ?>" class="client-dob"  required>
 			            <br><br>
 			            <label>Nationality</label><br>
 			            <input type="text" name="nationality" value="<?php echo $cNationality ?>" required>
@@ -93,6 +95,9 @@
 			            <label>Next Of Kin</label><br>
 			            <input type="text" name="nextOfKin" value="<?php echo $cNextOfKin ?>" required>
 			            <br><br>
+			            <label>Account Number</label><br>
+			            <input type="text" name="accountNumber" value="<?php echo $cAccountNumber ?>" required>
+			            <br><br>
 			            <button class="btn btn-primary btn-lg">Update</button>
 			        </form>
 				</div>
@@ -103,6 +108,11 @@
 		<script src="js/jquery2.2.4.min.js"></script>
 	    <script src="js/jquery-ui.min.js"></script>
 	    <script src="js/bootstrap.min.js"></script>
+	    <script src="js/bootstrap-datepicker.min.js"></script>
+	    <script>
+	    	$(".client-dob").datepicker({
+				format:"yyyy-mm-dd",
+			});
+	    </script>
 	</body>
 </html>
-

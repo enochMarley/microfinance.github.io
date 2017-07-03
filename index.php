@@ -5,7 +5,7 @@
 		<meta charset="utf-8">
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
-	    <title>Microfinance</title>
+	    <title>Nhyra Company Ltd</title>
 	    <link rel="stylesheet" href="css/bootstrap.min.css">
 	    <link rel="stylesheet" href="css/styles.css">
 		<style>
@@ -22,7 +22,7 @@
 				<div class="col-md-4">
 					<br><br><br><br><br><br>
 					<div class="card-div">
-						<h3 class="text-center">Company Admin Login</h3>
+						<h3 class="text-center">Nhyra Company Ltd <br>Admin Login</h3>
 						<p class="text-center resMsg">Enter Admin Username &amp; Password To Login</p><br>
 						<form method="post" class="admin-login-form">
 							<input type="text" name="username" placeholder="Admin Username" required><br><br>

@@ -11,9 +11,10 @@
 		<meta charset="utf-8">
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
-	    <title>Microfinance</title>
+	    <title>Nhyra Company Ltd</title>
 	    <link rel="stylesheet" href="css/bootstrap.min.css">
 	    <link rel="stylesheet" href="css/styles.css">
+	    <link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
 		<style>
 			body{
 				background-color: #f7f7f7;
@@ -29,7 +30,7 @@
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 		      </button>
-		      <a class="navbar-brand" href="#">Company</a>
+		      <a class="navbar-brand" href="#">Nhyra Company Ltd</a>
 		    </div>
 		    <div class="collapse navbar-collapse" id="myNavbar">
 		      <ul class="nav navbar-nav">
@@ -57,7 +58,7 @@
 		      </ul>
 		      <ul class="nav navbar-nav navbar-right">
 		        <li><a href="#myModal" data-toggle="modal"><span class="glyphicon glyphicon-plus"></span> Add Client</a></li>
-		        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+		        <li><a href="logout.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
 		      </ul>
 		    </div>
 		  </div>
@@ -84,7 +85,7 @@
 	                        <label>Client's passport size photo (photo format should be .jpg)</label>
 	                        <div>
 	                            <div><img src="includes/images/profile.jpeg" id="profileImg"></div><br>
-	                            <input accept="image/jpeg" type="file"  name="profileImage" required="true" id="uploadFile"><br>
+	                            <input accept="image/*" type="file"  name="profileImage" required="true" id="uploadFile"><br>
 	                        </div>
 		                	<label>Full Name</label><br>
 			                 <input type="text" name="fullName" class="client-full-name" required>
@@ -93,7 +94,7 @@
 			                 <input type="radio" name="gender" value="male" class="client-gender"> Male
 			                 <input type="radio" name="gender" value="female" class="client-gender"> Female <br><br>
 			                 <label>Date Of Birth (dd/mm/yy)</label><br>
-			                 <input type="date" name="dateOfBirth" class="client-dob" required>
+			                 <input type="text" name="dateOfBirth" class="client-dob" required>
 			                 <br><br>
 			                 <label>Nationality</label><br>
 			                 <input type="text" name="nationality" class="client-nationality" required>
@@ -108,7 +109,9 @@
 			                 <input type="text"  name="residentialAddress" class="client-res-address" required>
 			                 <br><br>
 			                 <label>Next Of Kin</label><br>
-			                 <input type="text" name="nextOfKin" class="client-next-of-kin" required>
+			                 <input type="text" name="nextOfKin" class="client-next-of-kin" required><br><br>
+			                 <label>Account Number</label><br>
+			                 <input type="text" name="accountNumber" class="account-number" required>
 			                 <br><br>
 		            </div>
 		            <div class="modal-footer">
@@ -124,6 +127,7 @@
 		<script src="js/jquery2.2.4.min.js"></script>
 	    <script src="js/jquery-ui.min.js"></script>
 	    <script src="js/bootstrap.min.js"></script>
+	    <script src="js/bootstrap-datepicker.min.js"></script>
 	    <script>
 	    	function getClients() {
 				$.ajax({
@@ -138,6 +142,10 @@
 					}
 				});
 			}
+
+			$(".client-dob").datepicker({
+				format:"yyyy-mm-dd",
+			});
 
 			getClients();
 

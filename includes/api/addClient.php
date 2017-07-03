@@ -8,7 +8,7 @@
 	$cPhoneNumber = trim($_POST['phoneNumber']);
 	$cResAddress = trim($_POST['residentialAddress']);
 	$cNextOfKin = trim($_POST['nextOfKin']);
-	$cAccNum = generateAccountNumber();
+	$cAccNum = trim($_POST['accountNumber']);
 
 	if (isset($_FILES["profileImage"]["name"])) {
 		$cImage = $_FILES["profileImage"]["name"];
@@ -41,10 +41,6 @@
 			}
 		}
 		
-	}
-
-	function generateAccountNumber(){
-		return substr((string)(md5(rand(1,10000))),0,10);
 	}
 
  ?>

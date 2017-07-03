@@ -10,7 +10,7 @@
 		<meta charset="utf-8">
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
-	    <title>Microfinance</title>
+	    <title>Nhyra Company Ltd</title>
 	    <link rel="stylesheet" href="css/bootstrap.min.css">
 	    <link rel="stylesheet" href="css/styles.css">
 		<style>
@@ -20,7 +20,6 @@
 		</style>
 	</head>
 	<body>
-		<br><br><br>
 		<div class="container">
 				<h2 class="text-center">Select An Activity</h2>
 				<a href="clients.php">
@@ -54,16 +53,6 @@
 						<h1 class="text-center" style="line-height: 300px;">Employees</h1>
 					</div>
 				</a>
-				<!--<a href="">
-					<div class="col-md-3">
-						<h1 class="text-center">Deposit</h1>
-					</div>
-				</a>
-				<a href="">
-					<div class="col-md-3">
-						<h1 class="text-center">Loans</h1>
-					</div>
-				</a>-->
 			
 		</div>
 		<script src="js/jquery2.2.4.min.js"></script>
@@ -71,7 +60,7 @@
 	    <script src="js/bootstrap.min.js"></script>
 	    <script>
 	    	var optDiv = $(".opt-div").width();
-	    	$(".opt-div").css({"width":optDiv,"height":optDiv});
+	    	$(".opt-div").css({"width":(optDiv + 30),"height":(optDiv + 30)});
 	    </script>
 	</body>
 </html>

@@ -9,8 +9,9 @@
 	$cPhoneNumber = trim($_POST['phoneNumber']);
 	$cResAddress = trim($_POST['residentialAddress']);
 	$cNextOfKin = trim($_POST['nextOfKin']);
+	$accountNumber = trim($_POST['accountNumber']);
 
-	$editQuery = "UPDATE clients SET fullName = '$cFullName', birthDate = '$cBirthDay', nationality = '$cNationality', emailAddress = '$cEmailAddress', phoneNumber = '$cPhoneNumber', resAddress = '$cResAddress', nextOfKin = '$cNextOfKin' WHERE Id = $cId;";
+	$editQuery = "UPDATE clients SET fullName = '$cFullName', birthDate = '$cBirthDay', nationality = '$cNationality', emailAddress = '$cEmailAddress', phoneNumber = '$cPhoneNumber', resAddress = '$cResAddress', nextOfKin = '$cNextOfKin',accountNumber = '$accountNumber' WHERE Id = $cId;";
 
 	$editResult = $database->query($editQuery);
 
